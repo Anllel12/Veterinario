@@ -44,6 +44,42 @@ namespace Veterinario
             }
         }
 
+        public DataTable getAllAnimals()
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM animales", connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable animals = new DataTable();
+                animals.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return animals;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable insertAnimal()
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("INSERT animales VALUES ();", connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable animals = new DataTable();
+                animals.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return animals;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
 
     }
 

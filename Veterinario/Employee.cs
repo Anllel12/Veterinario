@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Veterinario
 {
-    public partial class Principal : Form
+    public partial class Employee : Form
     {
-        public Principal()
+        public Employee()
         {
             InitializeComponent();
         }
