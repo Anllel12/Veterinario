@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace Veterinario
 {
-    public partial class Form2 : Form
+    public partial class Login : Form
     {
-        public Form2()
+        Connection Connection = new Connection();
+        DataTable employee = new DataTable();
+
+        public Login()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
