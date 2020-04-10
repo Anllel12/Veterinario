@@ -8,6 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Autor: Angel Esquins
+ * 
+ * En esta clase se puede observar la pantalla principal de la aplicacion.
+ * 
+ */
+
 namespace Veterinario
 {
     public partial class Home : Form

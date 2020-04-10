@@ -34,6 +34,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.error = new System.Windows.Forms.Label();
             this.añadir = new System.Windows.Forms.Button();
             this.nacimientoAñadir = new System.Windows.Forms.MonthCalendar();
             this.label8 = new System.Windows.Forms.Label();
@@ -107,6 +108,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.error);
             this.tabPage2.Controls.Add(this.añadir);
             this.tabPage2.Controls.Add(this.nacimientoAñadir);
             this.tabPage2.Controls.Add(this.label8);
@@ -129,6 +131,15 @@
             this.tabPage2.Text = "Añadir";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // error
+            // 
+            this.error.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error.Location = new System.Drawing.Point(491, 265);
+            this.error.Name = "error";
+            this.error.Size = new System.Drawing.Size(272, 46);
+            this.error.TabIndex = 31;
+            this.error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // añadir
             // 
             this.añadir.FlatAppearance.BorderSize = 0;
@@ -147,8 +158,10 @@
             // nacimientoAñadir
             // 
             this.nacimientoAñadir.Location = new System.Drawing.Point(531, 82);
+            this.nacimientoAñadir.MaxSelectionCount = 1;
             this.nacimientoAñadir.Name = "nacimientoAñadir";
             this.nacimientoAñadir.TabIndex = 29;
+            this.nacimientoAñadir.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.nacimientoAñadir_DateSelected);
             // 
             // label8
             // 
@@ -448,23 +461,13 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button buscar;
-        private System.Windows.Forms.MonthCalendar nacimientoBuscar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox sexoBuscar;
-        private System.Windows.Forms.TextBox razaBuscar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox nombreBuscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox dniDueñoBuscar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox especieBuscar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox codigoBuscar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button añadir;
-        private System.Windows.Forms.MonthCalendar nacimientoAñadir;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox sexoAñadir;
         private System.Windows.Forms.TextBox razaAñadir;
@@ -476,6 +479,17 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox especieAñadir;
         private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.Button añadir;
+        public System.Windows.Forms.MonthCalendar nacimientoAñadir;
+        public System.Windows.Forms.Button buscar;
+        public System.Windows.Forms.MonthCalendar nacimientoBuscar;
+        public System.Windows.Forms.TextBox sexoBuscar;
+        public System.Windows.Forms.TextBox razaBuscar;
+        public System.Windows.Forms.TextBox nombreBuscar;
+        public System.Windows.Forms.TextBox dniDueñoBuscar;
+        public System.Windows.Forms.TextBox especieBuscar;
+        public System.Windows.Forms.TextBox codigoBuscar;
+        public System.Windows.Forms.Label error;
     }
 }
 

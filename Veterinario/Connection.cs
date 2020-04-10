@@ -6,9 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+/*
+ * Autor: Angel Esquins
+ * 
+ * En esta clase se observamos todas los metodos que utilizamos para conectarnos con la base de datos.
+ * 
+ */
+
 namespace Veterinario
 {
-
     class Connection
     {
         public MySqlConnection connection;
@@ -17,7 +23,7 @@ namespace Veterinario
         {
             try
             {
-                connection = new MySqlConnection("Server=127.0.0.1; Database=veterinario; Uid=root; Pwd=; Port=3306");
+                connection = new MySqlConnection("Server=127.0.0.1; Database=veterinario; Uid=root; Pwd=; Port=3306");//se conecta con la base de datos
             }
             catch (MySqlException e)
             {
@@ -26,7 +32,7 @@ namespace Veterinario
 
         }
 
-        public DataTable getUserPassword()
+        public DataTable getUserPassword()//obtiene el usuario y contraseña
         {
             try
             {
@@ -44,7 +50,7 @@ namespace Veterinario
             }
         }
 
-        public DataTable getAllAnimals()
+        public DataTable getAllAnimals()//obtiene todos los animales
         {
             try
             {
@@ -62,21 +68,29 @@ namespace Veterinario
             }
         }
 
-        public DataTable insertAnimal()
+        public DataTable insertAnimal(String values)//inserta los datos de los animales en la base de datos
         {
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("INSERT animales VALUES ();", connection);//hacemos la query
+                MySqlCommand query = new MySqlCommand("INSERT animales VALUES ("+ values + "');", connection);//hacemos la query
                 MySqlDataReader result = query.ExecuteReader();//la ejecutamos
                 DataTable animals = new DataTable();
                 animals.Load(result);//cargamos los datos
                 connection.Close();//cerramos la conexion
+                Console.WriteLine(values);
                 return animals;
+                
             }
             catch (MySqlException e)
             {
-                throw e;
+                Console.WriteLine(values);
+
+                Animals window = new Animals();
+
+                window.error.Text = "Añada primero el dueño del animal o revise su dni.";
+                
+                throw e;                
             }
         }
 
