@@ -68,6 +68,24 @@ namespace Veterinario
             }
         }
 
+        public DataTable getAllClients()//obtiene todos los clientes
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM cliente", connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable client = new DataTable();
+                client.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return client;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
         public DataTable insertAnimal(String values)//inserta los datos de los animales en la base de datos
         {
             try
@@ -91,6 +109,32 @@ namespace Veterinario
                 window.error.Text = "Añada primero el dueño del animal o revise su dni.";
                 
                 throw e;                
+            }
+        }
+
+        public DataTable insertClient(String values)//inserta los datos de los clientes en la base de datos
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable client = new DataTable();
+                client.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                Console.WriteLine(values);
+                return client;
+
+            }
+            catch (MySqlException e)
+            {
+                Console.WriteLine(values);
+
+                Animals window = new Animals();
+
+                window.error.Text = "Añada primero el dueño del animal o revise su dni.";
+
+                throw e;
             }
         }
 

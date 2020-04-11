@@ -40,6 +40,13 @@ namespace Veterinario
             this.Hide();
         }
 
-       
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Clients window = new Clients();
+
+            window.Show();
+
+            this.Hide();
+        }
     }
 }
