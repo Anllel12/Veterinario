@@ -8,6 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Autor: Angel Esquins
+ * 
+ * En esta clase se observa los clientes que tenemos en la base de datos, tambien los podemos bucar y añadir en los diferentes Tabscontrol.
+ * 
+ */
+
 namespace Veterinario
 {
     public partial class Clients : Form

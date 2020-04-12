@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 /*
  * Autor: Angel Esquins
  * 
- * En esta clase se observamos todas los metodos que utilizamos para conectarnos con la base de datos.
+ * En esta clase bservamos todas los metodos que utilizamos para conectarnos con la base de datos.
  * 
  */
 
@@ -55,7 +55,7 @@ namespace Veterinario
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("SELECT * FROM animales", connection);//hacemos la query
+                MySqlCommand query = new MySqlCommand("SELECT * FROM animales ORDER BY codigo DESC", connection);//hacemos la query
                 MySqlDataReader result = query.ExecuteReader();//la ejecutamos
                 DataTable animals = new DataTable();
                 animals.Load(result);//cargamos los datos
@@ -104,8 +104,9 @@ namespace Veterinario
             {
                 Console.WriteLine(values);
 
-                Animals window = new Animals();
+                Clients window = new Clients();
 
+                window.Show();
                 window.error.Text = "Añada primero el dueño del animal o revise su dni.";
                 
                 throw e;                
