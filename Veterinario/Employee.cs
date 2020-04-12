@@ -79,7 +79,7 @@ namespace Veterinario
             {
                 value = dniA + "', '" + nombreA + "', '" + apellidoA + "', '" + direccionA + "', '" + telefonoA + "', '"+ usuarioA + "', '" + contraseñaA + "', '" + nacimientoA;
 
-                employee = connection.insertClient(value);
+                employee = connection.insertEmployee(value);
 
                 nombreAñadir.Text = "";//pongo todos los valores como al principio para poder seguir añadiendo mas
                 apellidoAñadir.Text = "";
