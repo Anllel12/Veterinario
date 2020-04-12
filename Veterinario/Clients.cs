@@ -92,11 +92,11 @@ namespace Veterinario
                 nacimientoA = "";
                 
 
-                error.Text = "Añadido el cliente.";
+                errorAñadir.Text = "Añadido el cliente.";
             }
             else
             {
-                error.Text = "Añada todos los parametros.";
+                errorAñadir.Text = "Añada todos los parametros.";
             }
         }
 

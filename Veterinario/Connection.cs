@@ -86,6 +86,24 @@ namespace Veterinario
             }
         }
 
+        public DataTable getAllEmployee()//obtiene todos los clientes
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado", connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable client = new DataTable();
+                client.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return client;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
         public DataTable insertAnimal(String values)//inserta los datos de los animales en la base de datos
         {
             try
@@ -107,7 +125,7 @@ namespace Veterinario
                 Clients window = new Clients();
 
                 window.Show();
-                window.error.Text = "Añada primero el dueño del animal o revise su dni.";
+                window.errorAñadir.Text = "Añada primero el dueño del animal o revise su dni.";
                 
                 throw e;                
             }
