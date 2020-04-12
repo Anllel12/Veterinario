@@ -29,6 +29,8 @@ namespace Veterinario
         public String apellidoA = "";
         public String direccionA = "";
         public String telefonoA = "";
+        public String usuarioA = "";
+        public String contraseñaA = "";
         public String nacimientoA = "";
         public String value = "";
 
@@ -70,10 +72,12 @@ namespace Veterinario
             direccionA = direccionA + direccionAñadir.Text;
             telefonoA = telefonoA + telefonoAñadir.Text;
             dniA = dniA + dniAñadir.Text;
+            usuarioA = usuarioA + usuarioAñadir.Text;
+            contraseñaA = contraseñaA + contraseñaAñadir.Text;
 
             if (nombreA != "" && apellidoA != "" && direccionA != "" && telefonoA != "" && dniA != "")//si no ahi ningun parametro vacio entra aqui
             {
-                value = dniA + "', '" + nombreA + "', '" + apellidoA + "', '" + direccionA + "', '" + telefonoA + "', '" + nacimientoA;
+                value = dniA + "', '" + nombreA + "', '" + apellidoA + "', '" + direccionA + "', '" + telefonoA + "', '"+ usuarioA + "', '" + contraseñaA + "', '" + nacimientoA;
 
                 employee = connection.insertClient(value);
 
@@ -82,6 +86,8 @@ namespace Veterinario
                 direccionAñadir.Text = "";
                 telefonoAñadir.Text = "";
                 dniAñadir.Text = "";
+                usuarioAñadir.Text = "";
+                contraseñaAñadir.Text = "";
 
                 dniA = "";
                 nombreA = "";
@@ -89,6 +95,8 @@ namespace Veterinario
                 direccionA = "";
                 telefonoA = "";
                 nacimientoA = "";
+                usuarioA = "";
+                contraseñaA = "";
 
 
                 errorAñadir.Text = "Añadido el empleado.";

@@ -64,6 +64,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.direccionBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.contraseñaAñadir = new System.Windows.Forms.TextBox();
+            this.usuarioAñadir = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -106,6 +110,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.contraseñaAñadir);
+            this.tabPage2.Controls.Add(this.usuarioAñadir);
+            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.errorAñadir);
             this.tabPage2.Controls.Add(this.añadir);
             this.tabPage2.Controls.Add(this.nacimientoAñadir);
@@ -132,9 +140,9 @@
             // errorAñadir
             // 
             this.errorAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorAñadir.Location = new System.Drawing.Point(477, 266);
+            this.errorAñadir.Location = new System.Drawing.Point(390, 263);
             this.errorAñadir.Name = "errorAñadir";
-            this.errorAñadir.Size = new System.Drawing.Size(272, 46);
+            this.errorAñadir.Size = new System.Drawing.Size(378, 46);
             this.errorAñadir.TabIndex = 45;
             this.errorAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -145,7 +153,7 @@
             this.añadir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.añadir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.añadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.añadir.Location = new System.Drawing.Point(279, 266);
+            this.añadir.Location = new System.Drawing.Point(198, 266);
             this.añadir.Name = "añadir";
             this.añadir.Size = new System.Drawing.Size(192, 37);
             this.añadir.TabIndex = 44;
@@ -155,7 +163,7 @@
             // 
             // nacimientoAñadir
             // 
-            this.nacimientoAñadir.Location = new System.Drawing.Point(529, 80);
+            this.nacimientoAñadir.Location = new System.Drawing.Point(576, 80);
             this.nacimientoAñadir.MaxSelectionCount = 1;
             this.nacimientoAñadir.Name = "nacimientoAñadir";
             this.nacimientoAñadir.TabIndex = 43;
@@ -164,31 +172,31 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(274, 124);
+            this.label8.Location = new System.Drawing.Point(193, 124);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 40);
+            this.label8.Size = new System.Drawing.Size(117, 40);
             this.label8.TabIndex = 42;
             this.label8.Text = "Telefono";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // telefonoAñadir
             // 
-            this.telefonoAñadir.Location = new System.Drawing.Point(279, 179);
+            this.telefonoAñadir.Location = new System.Drawing.Point(198, 179);
             this.telefonoAñadir.Name = "telefonoAñadir";
-            this.telefonoAñadir.Size = new System.Drawing.Size(200, 20);
+            this.telefonoAñadir.Size = new System.Drawing.Size(170, 20);
             this.telefonoAñadir.TabIndex = 41;
             // 
             // apellidoAñadir
             // 
-            this.apellidoAñadir.Location = new System.Drawing.Point(279, 80);
+            this.apellidoAñadir.Location = new System.Drawing.Point(198, 80);
             this.apellidoAñadir.Name = "apellidoAñadir";
-            this.apellidoAñadir.Size = new System.Drawing.Size(200, 20);
+            this.apellidoAñadir.Size = new System.Drawing.Size(170, 20);
             this.apellidoAñadir.TabIndex = 40;
             // 
             // label9
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(524, 31);
+            this.label9.Location = new System.Drawing.Point(601, 31);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(148, 40);
             this.label9.TabIndex = 39;
@@ -197,17 +205,17 @@
             // 
             // nombreAñadir
             // 
-            this.nombreAñadir.Location = new System.Drawing.Point(20, 80);
+            this.nombreAñadir.Location = new System.Drawing.Point(9, 80);
             this.nombreAñadir.Name = "nombreAñadir";
-            this.nombreAñadir.Size = new System.Drawing.Size(200, 20);
+            this.nombreAñadir.Size = new System.Drawing.Size(170, 20);
             this.nombreAñadir.TabIndex = 38;
             // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(282, 31);
+            this.label10.Location = new System.Drawing.Point(193, 31);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 40);
+            this.label10.Size = new System.Drawing.Size(109, 40);
             this.label10.TabIndex = 37;
             this.label10.Text = "Apellido";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -215,43 +223,43 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(21, 124);
+            this.label11.Location = new System.Drawing.Point(10, 124);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(140, 40);
+            this.label11.Size = new System.Drawing.Size(113, 40);
             this.label11.TabIndex = 36;
             this.label11.Text = "Direccion";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dniAñadir
             // 
-            this.dniAñadir.Location = new System.Drawing.Point(20, 289);
+            this.dniAñadir.Location = new System.Drawing.Point(9, 289);
             this.dniAñadir.Name = "dniAñadir";
-            this.dniAñadir.Size = new System.Drawing.Size(200, 20);
+            this.dniAñadir.Size = new System.Drawing.Size(170, 20);
             this.dniAñadir.TabIndex = 35;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(22, 224);
+            this.label12.Location = new System.Drawing.Point(11, 224);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 40);
+            this.label12.Size = new System.Drawing.Size(103, 40);
             this.label12.TabIndex = 34;
             this.label12.Text = "DNI";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // direccionAñadir
             // 
-            this.direccionAñadir.Location = new System.Drawing.Point(20, 179);
+            this.direccionAñadir.Location = new System.Drawing.Point(9, 179);
             this.direccionAñadir.Name = "direccionAñadir";
-            this.direccionAñadir.Size = new System.Drawing.Size(200, 20);
+            this.direccionAñadir.Size = new System.Drawing.Size(170, 20);
             this.direccionAñadir.TabIndex = 33;
             // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 31);
+            this.label13.Location = new System.Drawing.Point(10, 31);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 40);
+            this.label13.Size = new System.Drawing.Size(103, 40);
             this.label13.TabIndex = 32;
             this.label13.Text = "Nombre";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -414,6 +422,40 @@
             this.label7.Text = "Nombre";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(389, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 40);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Contraseña";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // contraseñaAñadir
+            // 
+            this.contraseñaAñadir.Location = new System.Drawing.Point(394, 179);
+            this.contraseñaAñadir.Name = "contraseñaAñadir";
+            this.contraseñaAñadir.Size = new System.Drawing.Size(170, 20);
+            this.contraseñaAñadir.TabIndex = 48;
+            // 
+            // usuarioAñadir
+            // 
+            this.usuarioAñadir.Location = new System.Drawing.Point(394, 80);
+            this.usuarioAñadir.Name = "usuarioAñadir";
+            this.usuarioAñadir.Size = new System.Drawing.Size(170, 20);
+            this.usuarioAñadir.TabIndex = 47;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(389, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 40);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Usuario";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -471,5 +513,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox direccionBuscar;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox contraseñaAñadir;
+        private System.Windows.Forms.TextBox usuarioAñadir;
+        private System.Windows.Forms.Label label14;
     }
 }
