@@ -34,6 +34,10 @@
             this.clientes = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.contraseñaAñadir = new System.Windows.Forms.TextBox();
+            this.usuarioAñadir = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.errorAñadir = new System.Windows.Forms.Label();
             this.añadir = new System.Windows.Forms.Button();
             this.nacimientoAñadir = new System.Windows.Forms.MonthCalendar();
@@ -49,7 +53,6 @@
             this.direccionAñadir = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.errorBuscar = new System.Windows.Forms.Label();
             this.buscar = new System.Windows.Forms.Button();
             this.nacimientoBuscar = new System.Windows.Forms.MonthCalendar();
@@ -64,10 +67,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.direccionBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.contraseñaAñadir = new System.Windows.Forms.TextBox();
-            this.usuarioAñadir = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -81,10 +83,10 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(-2, -1);
+            this.tabControl1.Location = new System.Drawing.Point(-2, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(785, 383);
+            this.tabControl1.Size = new System.Drawing.Size(785, 381);
             this.tabControl1.TabIndex = 1;
             // 
             // clientes
@@ -94,7 +96,7 @@
             this.clientes.Location = new System.Drawing.Point(4, 39);
             this.clientes.Name = "clientes";
             this.clientes.Padding = new System.Windows.Forms.Padding(3);
-            this.clientes.Size = new System.Drawing.Size(777, 340);
+            this.clientes.Size = new System.Drawing.Size(777, 338);
             this.clientes.TabIndex = 0;
             this.clientes.Text = "Empleados";
             this.clientes.UseVisualStyleBackColor = true;
@@ -105,11 +107,12 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(771, 334);
+            this.dataGridView1.Size = new System.Drawing.Size(771, 332);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.contraseñaAñadir);
             this.tabPage2.Controls.Add(this.usuarioAñadir);
@@ -132,10 +135,44 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(777, 340);
+            this.tabPage2.Size = new System.Drawing.Size(777, 338);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Añadir";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(389, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 40);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Contraseña";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // contraseñaAñadir
+            // 
+            this.contraseñaAñadir.Location = new System.Drawing.Point(394, 179);
+            this.contraseñaAñadir.Name = "contraseñaAñadir";
+            this.contraseñaAñadir.Size = new System.Drawing.Size(170, 20);
+            this.contraseñaAñadir.TabIndex = 48;
+            // 
+            // usuarioAñadir
+            // 
+            this.usuarioAñadir.Location = new System.Drawing.Point(394, 80);
+            this.usuarioAñadir.Name = "usuarioAñadir";
+            this.usuarioAñadir.Size = new System.Drawing.Size(170, 20);
+            this.usuarioAñadir.TabIndex = 47;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(389, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(109, 40);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Usuario";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // errorAñadir
             // 
@@ -266,6 +303,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button1);
             this.tabPage3.Controls.Add(this.errorBuscar);
             this.tabPage3.Controls.Add(this.buscar);
             this.tabPage3.Controls.Add(this.nacimientoBuscar);
@@ -284,18 +322,10 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(777, 340);
+            this.tabPage3.Size = new System.Drawing.Size(777, 338);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Buscar";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8_medical_doctor_1.ico");
-            this.imageList1.Images.SetKeyName(1, "icons8_plus.ico");
-            this.imageList1.Images.SetKeyName(2, "icons8_search_1.ico");
             // 
             // errorBuscar
             // 
@@ -390,7 +420,7 @@
             // 
             // dniBuscar
             // 
-            this.dniBuscar.Location = new System.Drawing.Point(24, 288);
+            this.dniBuscar.Location = new System.Drawing.Point(24, 277);
             this.dniBuscar.Name = "dniBuscar";
             this.dniBuscar.Size = new System.Drawing.Size(200, 20);
             this.dniBuscar.TabIndex = 63;
@@ -422,39 +452,43 @@
             this.label7.Text = "Nombre";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // imageList1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(389, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 40);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Contraseña";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8_medical_doctor_1.ico");
+            this.imageList1.Images.SetKeyName(1, "icons8_plus.ico");
+            this.imageList1.Images.SetKeyName(2, "icons8_search_1.ico");
             // 
-            // contraseñaAñadir
+            // button1
             // 
-            this.contraseñaAñadir.Location = new System.Drawing.Point(394, 179);
-            this.contraseñaAñadir.Name = "contraseñaAñadir";
-            this.contraseñaAñadir.Size = new System.Drawing.Size(170, 20);
-            this.contraseñaAñadir.TabIndex = 48;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Veterinario.Properties.Resources.icons8_undo_30px;
+            this.button1.Location = new System.Drawing.Point(744, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 74;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // usuarioAñadir
+            // button2
             // 
-            this.usuarioAñadir.Location = new System.Drawing.Point(394, 80);
-            this.usuarioAñadir.Name = "usuarioAñadir";
-            this.usuarioAñadir.Size = new System.Drawing.Size(170, 20);
-            this.usuarioAñadir.TabIndex = 47;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(389, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(109, 40);
-            this.label14.TabIndex = 46;
-            this.label14.Text = "Usuario";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::Veterinario.Properties.Resources.icons8_undo_30px;
+            this.button2.Location = new System.Drawing.Point(741, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 75;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
             // Employee
             // 
@@ -517,5 +551,7 @@
         private System.Windows.Forms.TextBox contraseñaAñadir;
         private System.Windows.Forms.TextBox usuarioAñadir;
         private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button2;
     }
 }

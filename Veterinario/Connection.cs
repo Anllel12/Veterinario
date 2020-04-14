@@ -112,45 +112,42 @@ namespace Veterinario
             }
         }
 
-        public DataTable insertAnimal(String values)//inserta los datos de los animales en la base de datos
+        public String insertAnimal(String values)//inserta los datos de los animales en la base de datos
         {
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("INSERT animales VALUES ("+ values + "');", connection);//hacemos la query
-                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
-                DataTable animals = new DataTable();
-                animals.Load(result);//cargamos los datos
+                MySqlCommand query = new MySqlCommand("INSERT animales VALUES ('" + values + "');", connection);//hacemos la query
+
+                query.ExecuteNonQuery();
+
                 connection.Close();//cerramos la conexion
-                Console.WriteLine(values);
-                return animals;
-                
+                return "Añadido correctamente";
             }
             catch (MySqlException e)
-            {   
-                throw e;                
+            {
+                return "Error al añadirlo";
             }
         }
 
-        public DataTable insertClient(String values)//inserta los datos de los clientes en la base de datos
+        public String insertClient(String values)//inserta los datos de los clientes en la base de datos
         {
             try
             {
                 connection.Open();//conectamos con la base de datos
                 MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
-                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
-                DataTable client = new DataTable();
-                client.Load(result);//cargamos los datos
+
+                query.ExecuteNonQuery();
+
                 connection.Close();//cerramos la conexion
-                Console.WriteLine(values);
-                return client;
+                return "Añadido correctamente";
 
             }
             catch (MySqlException e)
             {
                 Console.WriteLine(values);
 
-                throw e;
+                return "Error al añadirlo";
             }
         }
 

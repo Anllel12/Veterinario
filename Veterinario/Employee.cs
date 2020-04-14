@@ -87,5 +87,13 @@ namespace Veterinario
             nacimientoA = nacimientoA + nacimientoAñadir.SelectionRange.Start.ToString();//guardo la fecha
             nacimientoA = changeDay(nacimientoA);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Home w = new Home();
+
+            w.Show();
+            this.Hide();
+        }
     }
 }
