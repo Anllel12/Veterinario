@@ -508,7 +508,6 @@
         private System.Windows.Forms.TextBox nombreAñadir;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox dniAñadir;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox especieAñadir;
         private System.Windows.Forms.Label label13;
@@ -526,6 +525,7 @@
         public System.Windows.Forms.ImageList imageList1;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox dniAñadir;
     }
 }
 

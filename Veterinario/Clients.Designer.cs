@@ -486,7 +486,6 @@
         private System.Windows.Forms.TextBox nombreAñadir;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox dniAñadir;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox direccionAñadir;
         private System.Windows.Forms.Label label13;
@@ -507,5 +506,6 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox dniAñadir;
     }
 }

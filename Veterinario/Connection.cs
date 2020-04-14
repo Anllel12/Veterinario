@@ -4,7 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Renci.SshNet.Messages;
 
 /*
  * Autor: Angel Esquins
@@ -99,7 +101,7 @@ namespace Veterinario
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado", connection);//hacemos la query
+                MySqlCommand query = new MySqlCommand("SELECT dni, nombre, apellido, direccion, telefono, nacimiento FROM empleado", connection);//hacemos la query
                 MySqlDataReader result = query.ExecuteReader();//la ejecutamos
                 DataTable client = new DataTable();
                 client.Load(result);//cargamos los datos
@@ -120,12 +122,20 @@ namespace Veterinario
                 MySqlCommand query = new MySqlCommand("INSERT animales VALUES ('" + values + "');", connection);//hacemos la query
 
                 query.ExecuteNonQuery();
-
+                MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
             }
             catch (MySqlException e)
             {
+                Clients w = new Clients();
+                Animals wi = new Animals();
+
+                w.Show();
+                wi.Hide();
+                w.errorAñadir.Text = "Añada primero el cliente a la base de datos.";
+                w.dniAñadir.Text = wi.dniAñadir.Text;
+                
                 return "Error al añadirlo";
             }
         }
@@ -135,18 +145,16 @@ namespace Veterinario
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
+                //MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
 
-                query.ExecuteNonQuery();
-
+                //query.ExecuteNonQuery();
+                MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
 
             }
             catch (MySqlException e)
             {
-                Console.WriteLine(values);
-
                 return "Error al añadirlo";
             }
         }
@@ -159,7 +167,7 @@ namespace Veterinario
                 MySqlCommand query = new MySqlCommand("INSERT empleado VALUES ('" + values + "');", connection);//hacemos la query
 
                 query.ExecuteNonQuery();
-
+                MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
             }
