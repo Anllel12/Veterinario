@@ -423,7 +423,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Clients";
-            this.Text = "Clients";
+            this.Text = "Clientes";
             this.tabControl1.ResumeLayout(false);
             this.clientes.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);

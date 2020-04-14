@@ -40,7 +40,6 @@ namespace Veterinario
             dataGridView1.DataSource = connection.getAllAnimals();//carga todos los animales en el datagrid del primer tab
             animals = connection.getAllAnimals();
             codigo = Convert.ToInt32(animals.Rows[0]["codigo"]);//hago que coincida el ultimo codigo que ahi en la base de datos con el codigo
-            Console.WriteLine(codigo);
         }
 
         //Método para cerrar la apliación entera cuando se cierra el form

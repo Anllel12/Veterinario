@@ -96,7 +96,7 @@
             this.clientes.Padding = new System.Windows.Forms.Padding(3);
             this.clientes.Size = new System.Drawing.Size(777, 340);
             this.clientes.TabIndex = 0;
-            this.clientes.Text = "Clientes";
+            this.clientes.Text = "Empleados";
             this.clientes.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -465,7 +465,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Employee";
-            this.Text = "Employee";
+            this.Text = "Empleados";
             this.tabControl1.ResumeLayout(false);
             this.clientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

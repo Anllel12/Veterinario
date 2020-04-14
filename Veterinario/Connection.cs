@@ -32,21 +32,29 @@ namespace Veterinario
 
         }
 
-        public DataTable getUserPassword()//obtiene el usuario y contraseña
+        public Boolean getUserPassword(String usuario, String contraseña)//obtiene el usuario y contraseña
         {
             try
             {
                 connection.Open();//conectamos con la base de datos
-                MySqlCommand query = new MySqlCommand("SELECT usuario, contraseña FROM empleado", connection);//hacemos la query
+
+                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado WHERE usuario = @usuario AND contraseña = @contraseña" , connection);//hacemos la query
+                query.Parameters.AddWithValue("@usuario", usuario);
+                query.Parameters.AddWithValue("@contraseña", contraseña);
+
                 MySqlDataReader result = query.ExecuteReader();//la ejecutamos
-                DataTable employee = new DataTable();
-                employee.Load(result);//cargamos los datos
+
+                if (result.Read())
+                {
+                    return true;
+                }
+
                 connection.Close();//cerramos la conexion
-                return employee;
+                return false;
             }
             catch (MySqlException e)
             {
-                throw e;
+                return false;
             }
         }
 
@@ -86,7 +94,7 @@ namespace Veterinario
             }
         }
 
-        public DataTable getAllEmployee()//obtiene todos los clientes
+        public DataTable getAllEmployee()//obtiene todos los empleados
         {
             try
             {
@@ -119,14 +127,7 @@ namespace Veterinario
                 
             }
             catch (MySqlException e)
-            {
-                Console.WriteLine(values);
-
-                Clients window = new Clients();
-
-                window.Show();
-                window.errorAñadir.Text = "Añada primero el dueño del animal o revise su dni.";
-                
+            {   
                 throw e;                
             }
         }
@@ -169,8 +170,6 @@ namespace Veterinario
             }
             catch (MySqlException e)
             {
-                Console.WriteLine(values);
-
                 throw e;
             }
         }

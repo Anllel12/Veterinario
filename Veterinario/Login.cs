@@ -20,48 +20,32 @@ namespace Veterinario
     public partial class Login : Form
     {
         Connection connection = new Connection();
-        DataTable employee = new DataTable();
-
-        String user = "";
-        String password = "";
 
         public Login()
         {
             InitializeComponent();
-        }    
+        }
 
         private void entrar_Click(object sender, EventArgs e)
         {
-            user = user + usuario.Text;
-            password = password + contraseña.Text;
-
-            employee = connection.getUserPassword();
-
-            //for (int i = 0; i < employee.Rows.Count; i++)
-            //{
-            //    if (user.Equals(employee.Rows[i]["usuario"].ToString()) && password.Equals(employee.Rows[i]["contraseña"].ToString()))//comparo lo introducido en los TextBox con la base de datos
-            //    {
-            //        Home window = new Home();
-
-            //        window.Show();
-
-            //        this.Hide();
-            //    }/*-+
-            //    else .
-            //    {
-            //        user = "";//pongo todos los String vacios
-            //        password = "";
-            //        usuario.Text = "";
-            //        contraseña.Text = "";
-
-            //        label3.Text = "Error al introducir el usuario o la contraseña. Vuelva a intentarlo.";
-            //    }               
-            //}
             Home window = new Home();
 
             window.Show();
-
             this.Hide();
+            //if (connection.getUserPassword(usuario.Text, contraseña.Text))
+            //{
+            //    Home window = new Home();
+
+            //    window.Show();
+            //    this.Hide();
+            //}
+            //else
+            //{
+            //    label3.Text = "Usuario o contraseña incorrectos";
+
+            //    usuario.Text = "";
+            //    contraseña.Text = "";
+            //}
         }
     }
 }
