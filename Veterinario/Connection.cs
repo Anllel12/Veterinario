@@ -154,23 +154,21 @@ namespace Veterinario
             }
         }
 
-        public DataTable insertEmployee(String values)//inserta los datos de los clientes en la base de datos
+        public String insertEmployee(String values)//inserta los datos de los clientes en la base de datos
         {
             try
             {
                 connection.Open();//conectamos con la base de datos
                 MySqlCommand query = new MySqlCommand("INSERT empleado VALUES ('" + values + "');", connection);//hacemos la query
-                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
-                DataTable employee = new DataTable();
-                employee.Load(result);//cargamos los datos
-                connection.Close();//cerramos la conexion
-                Console.WriteLine(values);
-                return employee;
 
+                query.ExecuteNonQuery();
+
+                connection.Close();//cerramos la conexion
+                return "Añadido correctamente";
             }
             catch (MySqlException e)
             {
-                throw e;
+                return "Error al añadirlo";
             }
         }
 

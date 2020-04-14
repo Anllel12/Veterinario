@@ -20,19 +20,9 @@ namespace Veterinario
     public partial class Employee : Form
     {
         Connection connection = new Connection();
-        DataTable employee = new DataTable();
 
-
-
-        public String dniA = "";
-        public String nombreA = "";
-        public String apellidoA = "";
-        public String direccionA = "";
-        public String telefonoA = "";
-        public String usuarioA = "";
-        public String contraseñaA = "";
-        public String nacimientoA = "";
         public String value = "";
+        public String nacimientoA = "";
 
         public Employee()
         {
@@ -67,19 +57,11 @@ namespace Veterinario
 
         private void añadir_Click(object sender, EventArgs e)
         {
-            nombreA = nombreA + nombreAñadir.Text;
-            apellidoA = apellidoA + apellidoAñadir.Text;
-            direccionA = direccionA + direccionAñadir.Text;
-            telefonoA = telefonoA + telefonoAñadir.Text;
-            dniA = dniA + dniAñadir.Text;
-            usuarioA = usuarioA + usuarioAñadir.Text;
-            contraseñaA = contraseñaA + contraseñaAñadir.Text;
-
-            if (nombreA != "" && apellidoA != "" && direccionA != "" && telefonoA != "" && dniA != "")//si no ahi ningun parametro vacio entra aqui
+            if (nombreAñadir.Text != "" && apellidoAñadir.Text != "" && direccionAñadir.Text != "" && telefonoAñadir.Text != "" && dniAñadir.Text != "" && usuarioAñadir.Text != "" && contraseñaAñadir.Text != "")//si no ahi ningun parametro vacio entra aqui
             {
-                value = dniA + "', '" + nombreA + "', '" + apellidoA + "', '" + direccionA + "', '" + telefonoA + "', '"+ usuarioA + "', '" + contraseñaA + "', '" + nacimientoA;
+                value = dniAñadir.Text + "', '" + nombreAñadir.Text + "', '" + apellidoAñadir.Text + "', '" + direccionAñadir.Text + "', '" + telefonoAñadir.Text + "', '"+ usuarioAñadir.Text + "', '" + contraseñaAñadir.Text + "', '" + nacimientoA;
 
-                employee = connection.insertEmployee(value);
+                String error = connection.insertEmployee(value);
 
                 nombreAñadir.Text = "";//pongo todos los valores como al principio para poder seguir añadiendo mas
                 apellidoAñadir.Text = "";
@@ -89,17 +71,10 @@ namespace Veterinario
                 usuarioAñadir.Text = "";
                 contraseñaAñadir.Text = "";
 
-                dniA = "";
-                nombreA = "";
-                apellidoA = "";
-                direccionA = "";
-                telefonoA = "";
                 nacimientoA = "";
-                usuarioA = "";
-                contraseñaA = "";
 
 
-                errorAñadir.Text = "Añadido el empleado.";
+                errorAñadir.Text = error;
             }
             else
             {

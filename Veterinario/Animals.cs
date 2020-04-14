@@ -25,11 +25,6 @@ namespace Veterinario
 
         public int codigo = 0;
 
-        public String nombreA = "";
-        public String razaA = "";
-        public String especieA = "";
-        public String sexoA = "";
-        public String dniA = "";
         public String value = "";
         public String nacimientoA = "";
 
@@ -73,19 +68,13 @@ namespace Veterinario
 
         public void añadir_Click(object sender, EventArgs e)
         {
-            nombreA = nombreA + nombreAñadir.Text;
-            razaA = razaA + razaAñadir.Text;
-            especieA = especieA + especieAñadir.Text;
-            sexoA = sexoA + sexoAñadir.Text;
-            dniA = dniA + dniAñadir.Text;
-
-            if (nombreA != "" && razaA != "" && especieA != "" && sexoA != "" && dniA != "")//si no ahi ningun parametro vacio entra aqui
+            if (nombreAñadir.Text != "" && razaAñadir.Text != "" && especieAñadir.Text != "" && sexoAñadir.Text != "" && dniAñadir.Text != "")//si no ahi ningun parametro vacio entra aqui
             {
                 codigo++;
 
-                value = codigo + ", '" + nombreA + "', '" + nacimientoA + "', '" + razaA + "', '" + dniA + "', '" + especieA + "', '" + sexoA ;
+                value = codigo + ", '" + nombreAñadir.Text + "', '" + nacimientoAñadir.Text + "', '" + razaAñadir.Text + "', '" + dniAñadir.Text + "', '" + especieAñadir.Text + "', '" + sexoAñadir.Text;
                 
-                animals = connection.insertAnimal(value);
+                String animals = connection.insertAnimal(value);
 
                 nombreAñadir.Text = "";//pongo todos los valores como al principio para poder seguir añadiendo mas
                 razaAñadir.Text = "";
@@ -93,14 +82,9 @@ namespace Veterinario
                 sexoAñadir.Text = "";
                 dniAñadir.Text = "";
 
-                nombreA = "";
-                razaA = "";
-                especieA = "";
-                sexoA = "";
-                dniA = "";
                 nacimientoA = "";
 
-                error.Text = "Añadido el animal.";
+                error.Text =animals;
             }
             else
             {
