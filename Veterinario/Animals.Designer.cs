@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Animals));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridAnimals = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.error = new System.Windows.Forms.Label();
             this.añadir = new System.Windows.Forms.Button();
@@ -69,7 +69,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnimals)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -89,8 +89,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.ImageIndex = 1;
+            this.tabPage1.Controls.Add(this.dataGridAnimals);
+            this.tabPage1.ImageIndex = 0;
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -99,14 +99,16 @@
             this.tabPage1.Text = "Animales";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridAnimals
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(770, 332);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridAnimals.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridAnimals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAnimals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridAnimals.Location = new System.Drawing.Point(3, 3);
+            this.dataGridAnimals.Name = "dataGridAnimals";
+            this.dataGridAnimals.Size = new System.Drawing.Size(770, 332);
+            this.dataGridAnimals.TabIndex = 0;
+            this.dataGridAnimals.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAnimals_CellClick);
             // 
             // tabPage2
             // 
@@ -125,7 +127,7 @@
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.especieAñadir);
             this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.ImageIndex = 6;
+            this.tabPage2.ImageIndex = 2;
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -279,7 +281,7 @@
             this.tabPage4.Controls.Add(this.label2);
             this.tabPage4.Controls.Add(this.codigoBuscar);
             this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.ImageIndex = 8;
+            this.tabPage4.ImageIndex = 1;
             this.tabPage4.Location = new System.Drawing.Point(4, 39);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -425,15 +427,9 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8_cat_butt.ico");
-            this.imageList1.Images.SetKeyName(1, "icons8_dog.ico");
-            this.imageList1.Images.SetKeyName(2, "icons8_heart_with_pulse_1.ico");
-            this.imageList1.Images.SetKeyName(3, "icons8_medical_doctor_1.ico");
-            this.imageList1.Images.SetKeyName(4, "icons8_pig.ico");
-            this.imageList1.Images.SetKeyName(5, "icons8_syringe.ico");
-            this.imageList1.Images.SetKeyName(6, "icons8_cat_footprint.ico");
-            this.imageList1.Images.SetKeyName(7, "icons8_corgi.ico");
-            this.imageList1.Images.SetKeyName(8, "icons8_search_1.ico");
+            this.imageList1.Images.SetKeyName(0, "icons8_dog.ico");
+            this.imageList1.Images.SetKeyName(1, "icons8_search_1.ico");
+            this.imageList1.Images.SetKeyName(2, "icons8_plus.ico");
             // 
             // button2
             // 
@@ -478,7 +474,7 @@
             this.Text = "Animales";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAnimals)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -492,7 +488,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -526,6 +521,7 @@
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox dniAñadir;
+        public System.Windows.Forms.DataGridView dataGridAnimals;
     }
 }
 

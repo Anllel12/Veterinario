@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.clientes = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridEmployee = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.contraseñaAñadir = new System.Windows.Forms.TextBox();
@@ -68,11 +68,11 @@
             this.direccionBuscar = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.clientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +91,7 @@
             // 
             // clientes
             // 
-            this.clientes.Controls.Add(this.dataGridView1);
+            this.clientes.Controls.Add(this.dataGridEmployee);
             this.clientes.ImageIndex = 0;
             this.clientes.Location = new System.Drawing.Point(4, 39);
             this.clientes.Name = "clientes";
@@ -101,14 +101,16 @@
             this.clientes.Text = "Empleados";
             this.clientes.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridEmployee
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(771, 332);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridEmployee.Location = new System.Drawing.Point(3, 3);
+            this.dataGridEmployee.Name = "dataGridEmployee";
+            this.dataGridEmployee.Size = new System.Drawing.Size(771, 332);
+            this.dataGridEmployee.TabIndex = 0;
+            this.dataGridEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEmployee_CellClick);
             // 
             // tabPage2
             // 
@@ -460,21 +462,6 @@
             this.imageList1.Images.SetKeyName(1, "icons8_plus.ico");
             this.imageList1.Images.SetKeyName(2, "icons8_search_1.ico");
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Veterinario.Properties.Resources.icons8_undo_30px;
-            this.button1.Location = new System.Drawing.Point(744, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 74;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
@@ -490,6 +477,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Veterinario.Properties.Resources.icons8_undo_30px;
+            this.button1.Location = new System.Drawing.Point(744, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 30);
+            this.button1.TabIndex = 74;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,7 +504,7 @@
             this.Text = "Empleados";
             this.tabControl1.ResumeLayout(false);
             this.clientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -515,7 +517,6 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage clientes;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabPage2;
         public System.Windows.Forms.Label errorAñadir;
         public System.Windows.Forms.Button añadir;
@@ -553,5 +554,6 @@
         private System.Windows.Forms.Label label14;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DataGridView dataGridEmployee;
     }
 }

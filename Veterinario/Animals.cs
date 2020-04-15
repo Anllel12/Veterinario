@@ -32,7 +32,7 @@ namespace Veterinario
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = connection.getAllAnimals();//carga todos los animales en el datagrid del primer tab
+            dataGridAnimals.DataSource = connection.getAllAnimals();//carga todos los animales en el datagrid del primer tab
             animals = connection.getAllAnimals();
             codigo = Convert.ToInt32(animals.Rows[0]["codigo"]);//hago que coincida el ultimo codigo que ahi en la base de datos con el codigo
         }
@@ -105,6 +105,21 @@ namespace Veterinario
 
             w.Show();
             this.Hide();
+        }
+
+        private void dataGridAnimals_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataSheetAnimals w = new DataSheetAnimals();
+            
+            w.codigo.Text = dataGridAnimals.Rows[e.RowIndex].Cells["codigo"].Value.ToString();//segun la columna donde pinche te pone el codigo del animal
+            w.nombre.Text = dataGridAnimals.Rows[e.RowIndex].Cells["nombre"].Value.ToString();//segun la columna donde pinche te pone el nombre del animal           
+            w.especie.Text = dataGridAnimals.Rows[e.RowIndex].Cells["especie"].Value.ToString();//segun la columna donde pinche te pone el especie del animal
+            w.raza.Text = dataGridAnimals.Rows[e.RowIndex].Cells["raza"].Value.ToString();//segun la columna donde pinche te pone el raza del animal
+            w.dni.Text = dataGridAnimals.Rows[e.RowIndex].Cells["dueño"].Value.ToString();//segun la columna donde pinche te pone el dueño del animal
+            w.sexo.Text = dataGridAnimals.Rows[e.RowIndex].Cells["sexo"].Value.ToString();//segun la columna donde pinche te pone el sexo del animal
+            w.nacimiento.Text = dataGridAnimals.Rows[e.RowIndex].Cells["nacimiento"].Value.ToString();//segun la columna donde pinche te pone el nacimiento del animal
+
+            w.Show();
         }
     }
 }

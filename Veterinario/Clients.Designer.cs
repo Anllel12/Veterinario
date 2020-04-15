@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clients));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.clientes = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridClients = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.errorAñadir = new System.Windows.Forms.Label();
             this.añadir = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.clientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             // 
             // clientes
             // 
-            this.clientes.Controls.Add(this.dataGridView1);
+            this.clientes.Controls.Add(this.dataGridClients);
             this.clientes.ImageIndex = 1;
             this.clientes.Location = new System.Drawing.Point(4, 39);
             this.clientes.Name = "clientes";
@@ -97,14 +97,16 @@
             this.clientes.Text = "Clientes";
             this.clientes.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridClients
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(774, 334);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridClients.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridClients.Location = new System.Drawing.Point(3, 3);
+            this.dataGridClients.Name = "dataGridClients";
+            this.dataGridClients.Size = new System.Drawing.Size(774, 334);
+            this.dataGridClients.TabIndex = 0;
+            this.dataGridClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridClients_CellClick);
             // 
             // tabPage2
             // 
@@ -460,7 +462,7 @@
             this.Text = "Clientes";
             this.tabControl1.ResumeLayout(false);
             this.clientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -489,7 +491,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox direccionAñadir;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label errorBuscar;
         public System.Windows.Forms.Button buscar;
         public System.Windows.Forms.MonthCalendar nacimientoBuscar;
@@ -507,5 +508,6 @@
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox dniAñadir;
+        public System.Windows.Forms.DataGridView dataGridClients;
     }
 }

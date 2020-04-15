@@ -81,6 +81,18 @@
     <Compile Include="Animals.Designer.cs">
       <DependentUpon>Animals.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSheet.Designer.cs">
+      <DependentUpon>DataSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSheetAnimals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSheetAnimals.Designer.cs">
+      <DependentUpon>DataSheetAnimals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clients.resx">
       <DependentUpon>Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSheet.resx">
+      <DependentUpon>DataSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataSheetAnimals.resx">
+      <DependentUpon>DataSheetAnimals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>

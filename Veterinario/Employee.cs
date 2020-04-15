@@ -28,7 +28,7 @@ namespace Veterinario
         {
             InitializeComponent();
 
-            dataGridView1.DataSource = connection.getAllEmployee();//carga todos los emledos en el datagrid del primar tab
+            dataGridEmployee.DataSource = connection.getAllEmployee();//carga todos los emledos en el datagrid del primar tab
         }
 
         //Método para cerrar la apliación entera cuando se cierra el form
@@ -94,6 +94,20 @@ namespace Veterinario
 
             w.Show();
             this.Hide();
+        }
+
+        private void dataGridEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataSheet w = new DataSheet();
+
+            w.nombre.Text = dataGridEmployee.Rows[e.RowIndex].Cells["nombre"].Value.ToString();//segun la columna donde pinche te pone el nombre del empleado
+            w.apellido.Text = dataGridEmployee.Rows[e.RowIndex].Cells["apellido"].Value.ToString();//segun la columna donde pinche te pone el apellido del empleado
+            w.direccion.Text = dataGridEmployee.Rows[e.RowIndex].Cells["direccion"].Value.ToString();//segun la columna donde pinche te pone el direccion del empleado
+            w.telefono.Text = dataGridEmployee.Rows[e.RowIndex].Cells["telefono"].Value.ToString();//segun la columna donde pinche te pone el telefono del empleado
+            w.dni.Text = dataGridEmployee.Rows[e.RowIndex].Cells["dni"].Value.ToString();//segun la columna donde pinche te pone el dni del empleado
+            w.nacimiento.Text = dataGridEmployee.Rows[e.RowIndex].Cells["nacimiento"].Value.ToString();//segun la columna donde pinche te pone el nacimiento del empleado
+
+            w.Show();
         }
     }
 }
