@@ -122,7 +122,7 @@ namespace Veterinario
                 MySqlCommand query = new MySqlCommand("INSERT animales VALUES ('" + values + "');", connection);//hacemos la query
 
                 query.ExecuteNonQuery();
-                MessageBox.Show(values);
+
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
             }

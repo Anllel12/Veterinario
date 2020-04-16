@@ -83,6 +83,7 @@ namespace Veterinario
                 dniAñadir.Text = "";
 
                 nacimientoA = "";
+                value = "";
 
                 error.Text =animals;
             }

@@ -23,6 +23,8 @@ namespace Veterinario
 
         public String value = "";
         public String nacimientoA = "";
+        
+        Boolean auxiliar = false;
 
         public Employee()
         {
@@ -70,9 +72,10 @@ namespace Veterinario
                 dniAñadir.Text = "";
                 usuarioAñadir.Text = "";
                 contraseñaAñadir.Text = "";
+                
 
                 nacimientoA = "";
-
+                value = "";
 
                 errorAñadir.Text = error;
             }
@@ -108,6 +111,73 @@ namespace Veterinario
             w.nacimiento.Text = dataGridEmployee.Rows[e.RowIndex].Cells["nacimiento"].Value.ToString();//segun la columna donde pinche te pone el nacimiento del empleado
 
             w.Show();
+        }
+
+        private void buscar_Click(object sender, EventArgs e)
+        {
+            if (nombreBuscar.Text == "" && apellidoBuscar.Text == "" && direccionBuscar.Text == "" && telefonoBuscar.Text == "" && dniBuscar.Text == "")//si no ahi ningun parametro vacio entra aqui
+            {
+                errorBuscar.Text = "Añada algun parametro.";
+            }
+            else
+            {
+                if (nombreBuscar.Text != "")
+                {
+                    value = value + "nombre='" + nombreBuscar.Text + "'";
+                }
+                if(apellidoBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "apellido='" + apellidoBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND apellido='" + apellidoBuscar.Text + "'";
+                    }
+                }
+                if (direccionBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "direccion='" + direccionBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND direccion='" + direccionBuscar.Text + "'";
+                    }
+                }
+                if (telefonoBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "telefono='" + telefonoBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND telefono='" + telefonoBuscar.Text + "'";
+                    }
+                }
+                if (dniBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "dni='" + dniBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND dni='" + dniBuscar.Text + "'";
+                    }
+                }
+                MessageBox.Show(value);
+                MessageBox.Show(nacimientoBuscar.SelectionRange.Start.ToString());
+
+                nombreBuscar.Text = "";//pongo todos los valores como al principio para poder seguir añadiendo mas
+                apellidoBuscar.Text = "";
+                direccionBuscar.Text = "";
+                telefonoBuscar.Text = "";
+                dniBuscar.Text = "";
+            }
         }
     }
 }

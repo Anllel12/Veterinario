@@ -71,6 +71,7 @@ namespace Veterinario
                 dniAñadir.Text = "";
 
                 nacimientoA = "";
+                value = "";
                 
 
                 errorAñadir.Text = client;
