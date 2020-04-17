@@ -58,7 +58,7 @@
             this.nombreBuscar = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dniDueñoBuscar = new System.Windows.Forms.TextBox();
+            this.dniBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.especieBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -275,7 +275,7 @@
             this.tabPage4.Controls.Add(this.nombreBuscar);
             this.tabPage4.Controls.Add(this.label5);
             this.tabPage4.Controls.Add(this.label4);
-            this.tabPage4.Controls.Add(this.dniDueñoBuscar);
+            this.tabPage4.Controls.Add(this.dniBuscar);
             this.tabPage4.Controls.Add(this.label3);
             this.tabPage4.Controls.Add(this.especieBuscar);
             this.tabPage4.Controls.Add(this.label2);
@@ -310,6 +310,7 @@
             this.nacimientoBuscar.Location = new System.Drawing.Point(572, 74);
             this.nacimientoBuscar.Name = "nacimientoBuscar";
             this.nacimientoBuscar.TabIndex = 14;
+            this.nacimientoBuscar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.nacimientoBuscar_DateSelected);
             // 
             // label7
             // 
@@ -372,12 +373,12 @@
             this.label4.Text = "Especie";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dniDueñoBuscar
+            // dniBuscar
             // 
-            this.dniDueñoBuscar.Location = new System.Drawing.Point(26, 283);
-            this.dniDueñoBuscar.Name = "dniDueñoBuscar";
-            this.dniDueñoBuscar.Size = new System.Drawing.Size(200, 20);
-            this.dniDueñoBuscar.TabIndex = 5;
+            this.dniBuscar.Location = new System.Drawing.Point(26, 283);
+            this.dniBuscar.Name = "dniBuscar";
+            this.dniBuscar.Size = new System.Drawing.Size(200, 20);
+            this.dniBuscar.TabIndex = 5;
             // 
             // label3
             // 
@@ -513,7 +514,7 @@
         public System.Windows.Forms.TextBox sexoBuscar;
         public System.Windows.Forms.TextBox razaBuscar;
         public System.Windows.Forms.TextBox nombreBuscar;
-        public System.Windows.Forms.TextBox dniDueñoBuscar;
+        public System.Windows.Forms.TextBox dniBuscar;
         public System.Windows.Forms.TextBox especieBuscar;
         public System.Windows.Forms.TextBox codigoBuscar;
         public System.Windows.Forms.Label error;

@@ -23,6 +23,8 @@ namespace Veterinario
         Connection connection = new Connection();
         DataTable animals = new DataTable();
 
+        DateTime thisDay = DateTime.Today;//esto me da el dia actual
+
         public int codigo = 0;
 
         public String value = "";
@@ -49,7 +51,6 @@ namespace Veterinario
             String año = "";
             String dia = "";
 
-            nacimiento = nacimiento.Remove(10);//elimina los ultimos caracteres del String
             año = nacimiento.Substring(6);//guardo el año
             dia = nacimiento.Substring(0,2);//guardo el dia
 
@@ -63,7 +64,99 @@ namespace Veterinario
 
         public void buscar_Click(object sender, EventArgs e)
         {
+            if (codigoBuscar.Text == "" && nombreBuscar.Text == "" && especieBuscar.Text == "" && razaBuscar.Text == "" && dniBuscar.Text == "" && sexoBuscar.Text == "")//si ahi algun parametro relleno entra aqui
+            {
+                MessageBox.Show("Añada algun parametro.");
+            }
+            else
+            {
+                if (codigoBuscar.Text != "")//creo la busqueda
+                {
+                    int codigo = Convert.ToInt32(codigoBuscar.Text);
 
+                    value = value + "codigo='" + codigo + "'";
+                }
+                if (nombreBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "nombre='" + nombreBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND nombre='" + nombreBuscar.Text + "'";
+                    }
+                }
+                if (especieBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "especie='" + especieBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND especie='" + especieBuscar.Text + "'";
+                    }
+                }
+                if (razaBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "raza='" + razaBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND raza='" + razaBuscar.Text + "'";
+                    }
+                }
+                if (dniBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "dni='" + dniBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND dni='" + dniBuscar.Text + "'";
+                    }
+                }
+                if (sexoBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "sexo='" + sexoBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND sexo='" + sexoBuscar.Text + "'";
+                    }
+                }
+                if (nacimientoBuscar.SelectionRange.Start.ToString("d") != thisDay.ToString("d"))//compruebo el dia de nacimiento ya qe no tiene sentido que haya nacido hoy
+                {
+                    if (value == "")
+                    {
+                        value = value + "nacimiento='" + nacimientoA + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND nacimiento='" + nacimientoA + "'";
+                    }
+                }
+
+                dataGridAnimals.DataSource = connection.findAnimals(value);
+
+                tabPage1.Show();
+
+                nombreBuscar.Text = "";//pongo todos los valores como al principio para poder seguir buscando más
+                codigoBuscar.Text = "";
+                especieBuscar.Text = "";
+                razaBuscar.Text = "";
+                dniBuscar.Text = "";
+                sexoBuscar.Text = "";
+
+                value = "";
+                nacimientoA = "";
+            }
         }
 
         public void añadir_Click(object sender, EventArgs e)
@@ -95,7 +188,7 @@ namespace Veterinario
 
         public void nacimientoAñadir_DateSelected(object sender, DateRangeEventArgs e)
         {           
-            nacimientoA = nacimientoA + nacimientoAñadir.SelectionRange.Start.ToString();//guardo la fecha
+            nacimientoA = nacimientoA + nacimientoAñadir.SelectionRange.Start.ToString("d");//guardo la fecha
             nacimientoA = changeDay(nacimientoA);
         }
 
@@ -121,6 +214,12 @@ namespace Veterinario
             w.nacimiento.Text = dataGridAnimals.Rows[e.RowIndex].Cells["nacimiento"].Value.ToString();//segun la columna donde pinche te pone el nacimiento del animal
 
             w.Show();
+        }
+
+        private void nacimientoBuscar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            nacimientoA = nacimientoA + nacimientoBuscar.SelectionRange.Start.ToString("d");//guardo la fecha
+            nacimientoA = changeDay(nacimientoA);
         }
     }
 }

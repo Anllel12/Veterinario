@@ -177,6 +177,60 @@ namespace Veterinario
             }
         }
 
+        public DataTable findEmployee(String values)//inserta los datos de los clientes en la base de datos
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado WHERE " + values, connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable employee = new DataTable();
+                employee.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return employee;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable findClient(String values)//inserta los datos de los clientes en la base de datos
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM cliente WHERE " + values, connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable employee = new DataTable();
+                employee.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return employee;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable findAnimals(String values)//inserta los datos de los clientes en la base de datos
+        {
+            try
+            {
+                connection.Open();//conectamos con la base de datos
+                MySqlCommand query = new MySqlCommand("SELECT * FROM animales WHERE " + values, connection);//hacemos la query
+                MySqlDataReader result = query.ExecuteReader();//la ejecutamos
+                DataTable employee = new DataTable();
+                employee.Load(result);//cargamos los datos
+                connection.Close();//cerramos la conexion
+                return employee;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
 
     }
 

@@ -21,6 +21,8 @@ namespace Veterinario
     {
         Connection connection = new Connection();
 
+        DateTime thisDay = DateTime.Today;//esto me da el dia actual
+
         public String nacimientoA = "";
         public String value = "";
 
@@ -44,7 +46,6 @@ namespace Veterinario
             String año = "";
             String dia = "";
 
-            nacimiento = nacimiento.Remove(10);//elimina los ultimos caracteres del String
             año = nacimiento.Substring(6);//guardo el año
             dia = nacimiento.Substring(0, 2);//guardo el dia
 
@@ -84,7 +85,7 @@ namespace Veterinario
 
         private void nacimientoAñadir_DateSelected(object sender, DateRangeEventArgs e)
         {
-            nacimientoA = nacimientoA + nacimientoAñadir.SelectionRange.Start.ToString();//guardo la fecha
+            nacimientoA = nacimientoA + nacimientoAñadir.SelectionRange.Start.ToString("d");//guardo la fecha
             nacimientoA = changeDay(nacimientoA);
         }
 
@@ -108,6 +109,95 @@ namespace Veterinario
             w.nacimiento.Text = dataGridClients.Rows[e.RowIndex].Cells["nacimiento"].Value.ToString();//segun la columna donde pinche te pone el nacimiento del cliente
 
             w.Show();
+        }
+
+        private void buscar_Click(object sender, EventArgs e)
+        {
+            if (nombreBuscar.Text == "" && apellidoBuscar.Text == "" && direccionBuscar.Text == "" && telefonoBuscar.Text == "" && dniBuscar.Text == "")//si ahi algun parametro relleno entra aqui
+            {
+                errorBuscar.Text = "Añada algun parametro.";
+            }
+            else
+            {
+                if (nombreBuscar.Text != "")//creo la busqueda
+                {
+                    value = value + "nombre='" + nombreBuscar.Text + "'";
+                }
+                if (apellidoBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "apellido='" + apellidoBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND apellido='" + apellidoBuscar.Text + "'";
+                    }
+                }
+                if (direccionBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "direccion='" + direccionBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND direccion='" + direccionBuscar.Text + "'";
+                    }
+                }
+                if (telefonoBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "telefono='" + telefonoBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND telefono='" + telefonoBuscar.Text + "'";
+                    }
+                }
+                if (dniBuscar.Text != "")
+                {
+                    if (value == "")
+                    {
+                        value = value + "dni='" + dniBuscar.Text + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND dni='" + dniBuscar.Text + "'";
+                    }
+                }
+                if (nacimientoBuscar.SelectionRange.Start.ToString("d") != thisDay.ToString("d"))//compruebo el dia de nacimiento ya qe no tiene sentido que haya nacido hoy
+                {
+                    if (value == "")
+                    {
+                        value = value + "nacimiento='" + nacimientoA + "'";
+                    }
+                    else
+                    {
+                        value = value + " AND nacimiento='" + nacimientoA + "'";
+                    }
+                }
+
+                dataGridClients.DataSource = connection.findClient(value);
+
+                tabPage1.Show();
+
+                nombreBuscar.Text = "";//pongo todos los valores como al principio para poder seguir añadiendo mas
+                apellidoBuscar.Text = "";
+                direccionBuscar.Text = "";
+                telefonoBuscar.Text = "";
+                dniBuscar.Text = "";
+
+                value = "";
+                nacimientoA = "";
+            }
+        }
+
+        private void nacimientoBuscar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            nacimientoA = nacimientoA + nacimientoBuscar.SelectionRange.Start.ToString("d");//guardo la fecha
+            nacimientoA = changeDay(nacimientoA);
         }
     }
 }

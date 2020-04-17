@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clients));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.clientes = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridClients = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.errorAñadir = new System.Windows.Forms.Label();
@@ -67,7 +67,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
-            this.clientes.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -75,7 +75,7 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.clientes);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.ImageList = this.imageList1;
@@ -85,17 +85,17 @@
             this.tabControl1.Size = new System.Drawing.Size(788, 383);
             this.tabControl1.TabIndex = 0;
             // 
-            // clientes
+            // tabPage1
             // 
-            this.clientes.Controls.Add(this.dataGridClients);
-            this.clientes.ImageIndex = 1;
-            this.clientes.Location = new System.Drawing.Point(4, 39);
-            this.clientes.Name = "clientes";
-            this.clientes.Padding = new System.Windows.Forms.Padding(3);
-            this.clientes.Size = new System.Drawing.Size(780, 340);
-            this.clientes.TabIndex = 0;
-            this.clientes.Text = "Clientes";
-            this.clientes.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.dataGridClients);
+            this.tabPage1.ImageIndex = 1;
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(780, 340);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Clientes";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // dataGridClients
             // 
@@ -309,6 +309,7 @@
             this.buscar.TabIndex = 58;
             this.buscar.Text = "Buscar";
             this.buscar.UseVisualStyleBackColor = true;
+            this.buscar.Click += new System.EventHandler(this.buscar_Click);
             // 
             // nacimientoBuscar
             // 
@@ -316,6 +317,7 @@
             this.nacimientoBuscar.MaxSelectionCount = 1;
             this.nacimientoBuscar.Name = "nacimientoBuscar";
             this.nacimientoBuscar.TabIndex = 57;
+            this.nacimientoBuscar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.nacimientoBuscar_DateSelected);
             // 
             // label2
             // 
@@ -461,7 +463,7 @@
             this.Name = "Clients";
             this.Text = "Clientes";
             this.tabControl1.ResumeLayout(false);
-            this.clientes.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridClients)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -474,7 +476,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage clientes;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.ImageList imageList1;
