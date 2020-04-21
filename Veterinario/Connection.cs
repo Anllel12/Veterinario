@@ -40,15 +40,21 @@ namespace Veterinario
             {
                 connection.Open();//conectamos con la base de datos
 
-                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado WHERE usuario = @usuario AND contraseña = @contraseña" , connection);//hacemos la query
+                MySqlCommand query = new MySqlCommand("SELECT * FROM empleado WHERE usuario = @usuario" , connection);//hacemos la query
                 query.Parameters.AddWithValue("@usuario", usuario);
-                query.Parameters.AddWithValue("@contraseña", contraseña);
 
                 MySqlDataReader result = query.ExecuteReader();//la ejecutamos
 
                 if (result.Read())
                 {
-                    return true;
+                    String passwordHash = result.GetString("contraseña");//mira la contraseña que ahi en la base de datos con el Hash
+                    if(BCrypt.Net.BCrypt.Verify(contraseña, passwordHash))//comprueba que sean las misma 
+                    {
+                        connection.Close();//cerramos la conexion
+                        return true;
+                    }
+                    connection.Close();//cerramos la conexion
+                    return false;
                 }
 
                 connection.Close();//cerramos la conexion
@@ -145,9 +151,9 @@ namespace Veterinario
             try
             {
                 connection.Open();//conectamos con la base de datos
-                //MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
+                MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
 
-                //query.ExecuteNonQuery();
+                query.ExecuteNonQuery();
                 MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
@@ -177,7 +183,7 @@ namespace Veterinario
             }
         }
 
-        public DataTable findEmployee(String values)//inserta los datos de los clientes en la base de datos
+        public DataTable findEmployee(String values)//busca los datos de los empleados en la base de datos
         {
             try
             {
@@ -195,7 +201,7 @@ namespace Veterinario
             }
         }
 
-        public DataTable findClient(String values)//inserta los datos de los clientes en la base de datos
+        public DataTable findClient(String values)//busca los datos de los clientes en la base de datos
         {
             try
             {
@@ -213,7 +219,7 @@ namespace Veterinario
             }
         }
 
-        public DataTable findAnimals(String values)//inserta los datos de los clientes en la base de datos
+        public DataTable findAnimals(String values)//busca los datos de los animales en la base de datos
         {
             try
             {

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 /*
  * Autor: Angel Esquins
@@ -62,7 +63,9 @@ namespace Veterinario
         {
             if (nombreAñadir.Text != "" && apellidoAñadir.Text != "" && direccionAñadir.Text != "" && telefonoAñadir.Text != "" && dniAñadir.Text != "" && usuarioAñadir.Text != "" && contraseñaAñadir.Text != "")//si no ahi ningun parametro vacio entra aqui
             {
-                value = dniAñadir.Text + "', '" + nombreAñadir.Text + "', '" + apellidoAñadir.Text + "', '" + direccionAñadir.Text + "', '" + telefonoAñadir.Text + "', '"+ usuarioAñadir.Text + "', '" + contraseñaAñadir.Text + "', '" + nacimientoA;
+                String password = contraseñaAñadir.Text;
+                string hash = BCrypt.Net.BCrypt.HashPassword(password, BCrypt.Net.BCrypt.GenerateSalt());
+                value = dniAñadir.Text + "', '" + nombreAñadir.Text + "', '" + apellidoAñadir.Text + "', '" + direccionAñadir.Text + "', '" + telefonoAñadir.Text + "', '"+ usuarioAñadir.Text + "', '" + hash + "', '" + nacimientoA;
 
                 String error = connection.insertEmployee(value);
 
