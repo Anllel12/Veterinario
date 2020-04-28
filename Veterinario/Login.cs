@@ -28,24 +28,21 @@ namespace Veterinario
 
         private void entrar_Click(object sender, EventArgs e)
         {
-            Home window = new Home();
 
-            window.Show();
-            this.Hide();
-            //if (connection.getUserPassword(usuario.Text, contraseña.Text))
-            //{
-            //    Home window = new Home();
+            if (connection.getUserPassword(usuario.Text, contraseña.Text))
+            {
+                Home window = new Home();
 
-            //    window.Show();
-            //    this.Hide();
-            //}
-            //else
-            //{
-            //    label3.Text = "Usuario o contraseña incorrectos";
+                window.Show();
+                this.Hide();
+            }
+            else
+            {
+                label3.Text = "Usuario o contraseña incorrectos";
 
-            //    usuario.Text = "";
-            //    contraseña.Text = "";
-            //}
+                usuario.Text = "";
+                contraseña.Text = "";
+            }
         }
     }
 }

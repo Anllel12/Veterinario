@@ -164,6 +164,7 @@
   <ItemGroup>
     <Content Include="Resources\BDVeterinario.sql" />
     <Content Include="Resources\fondo.png" />
+    <None Include="Resources\fondo4.png" />
     <None Include="Resources\fondo3.png" />
     <None Include="Resources\fondo2.png" />
     <None Include="Resources\icons8_undo_30px.png" />
