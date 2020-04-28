@@ -50,7 +50,7 @@ CREATE TABLE `animales` (
 
 LOCK TABLES `animales` WRITE;
 /*!40000 ALTER TABLE `animales` DISABLE KEYS */;
-INSERT INTO `animales` VALUES (1,'Tula','2012-05-11','Pomerania','75953515P','Perro','Hembra'),(2,'Rayo','2019-06-01','Husky Siberiano','26351695T','Perro','Macho'),(3,'Drako','2017-08-24','Labrador','56954261H','Perro','Macho'),(4,'Nina','2015-04-30','Bengala','32621583Q','Gato','Hembra'),(5,'Bal','2014-06-18','Toyger','32621583Q','Gato','Macho');
+INSERT INTO `animales` VALUES (1,'Tula','2012-05-11','Pomerania','75953515P','Perro','Hembra'),(2,'Rayo','2019-06-01','Husky Siberiano','26351695T','Perro','Macho'),(3,'Drako','2017-08-24','Labrador','56954261H','Perro','Macho'),(4,'Nina','2015-04-30','Bengala','32621583Q','Gato','Hembra'),(5,'Bal','2014-06-18','Toyger','32621583Q','Gato','Macho'),(6,'Roky','2019-05-23','American Shorthair','26351695T','Gato','Macho');
 /*!40000 ALTER TABLE `animales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,10 +67,8 @@ CREATE TABLE `cliente` (
   `apellido` varchar(25) NOT NULL,
   `direccion` varchar(100) DEFAULT NULL,
   `telefono` varchar(40) NOT NULL,
-  `usuario` varchar(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
-  PRIMARY KEY (`dni`),
-  UNIQUE KEY `usuario` (`usuario`)
+  `nacimiento` date DEFAULT NULL,
+  PRIMARY KEY (`dni`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,7 +78,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` VALUES ('26351695T','Paula','Revuelta','Calle Postas 43','635156842','Revuelta','Maquinon'),('32621583Q','Miriam','Aguirre','Calle Moreras 66','605065319','Aguirre','Cardio'),('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','Reinosa','Motocarro'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','Espinosa','Automovil'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','Prieto','Carricoche'),('75953515P','Ignaicio','Garcia','Calle Infantas 46','682153953','Garcia','Manuscrito'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','Perez','Esternon');
+INSERT INTO `cliente` VALUES ('26351695T','Paula','Revuelta','Calle Postas 43','635156842','1974-08-05'),('32621583Q','Miriam','Aguirre','Calle Moreras 66','605065319','1980-06-30'),('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','1991-11-12'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','1977-07-19'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','1979-06-05'),('75953515P','Ignaicio','Garcia','Calle Infantas 46','682153953','1988-02-20'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','2000-03-09'),('84396218T','Lucia ','Gutierrez','Avenida de Toros','655320164','1990-06-14');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +96,8 @@ CREATE TABLE `empleado` (
   `direccion` varchar(100) DEFAULT NULL,
   `telefono` varchar(40) NOT NULL,
   `usuario` varchar(20) NOT NULL,
-  `contraseña` varchar(20) NOT NULL,
+  `contraseña` varchar(70) DEFAULT NULL,
+  `nacimiento` date DEFAULT NULL,
   PRIMARY KEY (`dni`),
   UNIQUE KEY `usuario` (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -110,7 +109,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES ('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','Reinosa','Motocarro'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','Espinosa','Automovil'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','Prieto','Carricoche'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','Perez','Esternon');
+INSERT INTO `empleado` VALUES ('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','Reinosa','Motocarro','1975-09-13'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','Espinosa','Automovil','1982-03-28'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','Prieto','Carricoche','1980-10-07'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','Perez','Esternon','1985-12-14');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-08 12:37:22
+-- Dump completed on 2020-04-23 21:33:29
