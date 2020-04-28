@@ -162,9 +162,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\BDVeterinario.sql" />
     <None Include="Resources\icons8_undo_30px.png" />
     <Content Include="LICENSE.txt" />
-    <Content Include="Resources\veterinario.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

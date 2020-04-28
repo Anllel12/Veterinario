@@ -142,6 +142,7 @@
             // 
             // sexo
             // 
+            this.sexo.BackColor = System.Drawing.Color.Transparent;
             this.sexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sexo.Location = new System.Drawing.Point(297, 279);
             this.sexo.Name = "sexo";
@@ -151,6 +152,7 @@
             // 
             // label3
             // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(297, 229);
             this.label3.Name = "label3";
@@ -161,6 +163,7 @@
             // 
             // nacimiento
             // 
+            this.nacimiento.BackColor = System.Drawing.Color.Transparent;
             this.nacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nacimiento.Location = new System.Drawing.Point(553, 59);
             this.nacimiento.Name = "nacimiento";
@@ -170,6 +173,7 @@
             // 
             // label8
             // 
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(553, 9);
             this.label8.Name = "label8";
@@ -182,6 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Veterinario.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(784, 381);
             this.Controls.Add(this.nacimiento);
             this.Controls.Add(this.label8);
