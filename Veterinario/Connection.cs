@@ -9,9 +9,9 @@ using MySql.Data.MySqlClient;
 using Renci.SshNet.Messages;
 
 /*
- * Autor: Angel Esquins
+ * Autor: Angel Esquinas
  * 
- * En esta clase bservamos todas los metodos que utilizamos para conectarnos con la base de datos.
+ * En esta clase observamos todas los metodos que utilizamos para conectarnos con la base de datos.
  * 
  */
 
@@ -154,7 +154,6 @@ namespace Veterinario
                 MySqlCommand query = new MySqlCommand("INSERT cliente VALUES ('" + values + "');", connection);//hacemos la query
 
                 query.ExecuteNonQuery();
-                MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
 
@@ -173,7 +172,6 @@ namespace Veterinario
                 MySqlCommand query = new MySqlCommand("INSERT empleado VALUES ('" + values + "');", connection);//hacemos la query
 
                 query.ExecuteNonQuery();
-                MessageBox.Show(values);
                 connection.Close();//cerramos la conexion
                 return "Añadido correctamente";
             }

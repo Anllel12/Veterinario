@@ -162,8 +162,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\BDVeterinario.sql" />
     <Content Include="Resources\fondo.png" />
+    <Content Include="Resources\veterinario.sql" />
     <None Include="Resources\fondo4.png" />
     <None Include="Resources\fondo3.png" />
     <None Include="Resources\fondo2.png" />

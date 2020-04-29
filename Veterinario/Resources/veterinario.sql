@@ -109,7 +109,7 @@ CREATE TABLE `empleado` (
 
 LOCK TABLES `empleado` WRITE;
 /*!40000 ALTER TABLE `empleado` DISABLE KEYS */;
-INSERT INTO `empleado` VALUES ('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','Reinosa','Motocarro','1975-09-13'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','Espinosa','Automovil','1982-03-28'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','Prieto','Carricoche','1980-10-07'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','Perez','Esternon','1985-12-14');
+INSERT INTO `empleado` VALUES ('45856519G','Antonio','Reinosa','Calle Almibar 24','675963812','Reinosa','Motocarro','1975-09-13'),('51545987A','Jose','Espinosa','Calle del Rey 57','654654632','Espinosa','Automovil','1982-03-28'),('56954261H','Alberto','Prieto','Calle Florida 18','685296351','Prieto','Carricoche','1980-10-07'),('77777777Q','Juan','Robledo','Calle Cuarteles 12','652652652','1234','$2a$10$urkplCECtEOK5vlQJXeTu.pnac.yykP4f56aWUWg.cOJDkLF1E8O6','1995-06-14'),('82493162L','Cristian','Perez','Calle Mostesinos 73','784621953','Perez','Esternon','1985-12-14');
 /*!40000 ALTER TABLE `empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -232,4 +232,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-23 21:33:29
+-- Dump completed on 2020-04-29 19:37:42

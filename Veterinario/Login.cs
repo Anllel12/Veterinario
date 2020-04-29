@@ -28,7 +28,6 @@ namespace Veterinario
 
         private void entrar_Click(object sender, EventArgs e)
         {
-
             if (connection.getUserPassword(usuario.Text, contraseña.Text))
             {
                 Home window = new Home();

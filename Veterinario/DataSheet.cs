@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ * Autor: Angel Esquinas
+ * 
+ */
+
 namespace Veterinario
 {
     public partial class DataSheet : Form
